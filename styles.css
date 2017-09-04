@@ -74,7 +74,8 @@
 }
 
 .bar {
-	height: 3px;
+	margin-top: 3px;
+	height: 5px;
 }
 
 .bar:not(:last-child){
@@ -118,7 +119,10 @@ table.selector tbody th{
 	background-color: #b7c0ec;
 }
 
-table.selector tbody td:hover, table.selector tbody th:hover{
+table.selector tbody td:hover, table.selector tbody thno:hover{
 	background-color: #2b3c85;
 	color: white;
+}
+.HL{
+	border: 2px red solid;
 }

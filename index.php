@@ -28,14 +28,18 @@ $data = include __DIR__.'/data.php';
                       <div class="widget-wrapper">
                         <div class="widget">
                           <?php
-                          	$r = rand(1,100); // 65 20 10 5
-                            $s1 = ($r<=65?0:($r<=85?1:($r<=95?2:3)));
-                            $s2 = min($s1+rand(0,1),3);
-                            $s3 = min($s2+rand(0,1),3);
+                            if (is_array($info)){$info = '000,000,000,000,000,000';}
+                            $profiles = explode(',', $info);
                           ?>
-                          <div class="bar seniority-1 value-<?=$s1?>"></div>
-                          <div class="bar seniority-2 value-<?=$s2?>"></div>
-                          <div class="bar seniority-3 value-<?=$s3?>"></div>
+                          <div class="bar"
+                          <?php foreach ($profiles as $pid => $profile ): ?>
+                            <?php $seniorities = str_split($profile); ?>
+                            <?php foreach ($seniorities as $sid => $value ): ?>
+                              data-value-<?=$pid?>-<?=$sid?>="<?=$value?>"
+                            <?php endforeach; ?>
+                          <?php endforeach; ?>
+                          
+                          ></div>
                         </div>
                         <label><?=$topic?></label>
                       </div>
@@ -58,11 +62,11 @@ $data = include __DIR__.'/data.php';
         </tr>
       </thead>
       <tbody>
-        <? foreach($data['profiles'] as $profile): ?>
+        <? foreach($data['profiles'] as $pid => $profile): ?>
           <tr>
             <th><?=$profile?></th>
             <? foreach($data['seniorities'] as $sid => $seniority): ?>
-              <td data-class="seniority-<?=($sid+1)?>"><?=$seniority?></td>
+              <td data-pid="<?=($pid)?>" data-sid="<?=($sid)?>"><?=$seniority?></td>
             <? endforeach; ?>
           </tr>
         <? endforeach; ?>
