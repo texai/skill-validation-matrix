@@ -1,6 +1,4 @@
-<?php
-$data = include __DIR__.'/data.php';
-?>
+<?php $data = include __DIR__.'/data.php'; ?>
 
 <!DOCTYPE html>
 <html lang=en>
@@ -75,3 +73,4 @@ $data = include __DIR__.'/data.php';
 
   </body>
 </html>
+																																																																		

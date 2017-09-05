@@ -47,7 +47,6 @@
  }
 
  .header-block{
- 	/*background-color: salmon;*/
  	text-align: center;
  	padding: 4px;
  }
@@ -87,10 +86,6 @@
 .value-2{width: 14px; background-color: #FFAD33;}
 .value-3{width: 21px; background-color: #FF4136;}
 
-
-
-/******************/
-
 table.selector{
 	width: 400px;
 	margin: 10px auto 0px;
@@ -122,7 +117,4 @@ table.selector tbody th{
 table.selector tbody td:hover, table.selector tbody thno:hover{
 	background-color: #2b3c85;
 	color: white;
-}
-.HL{
-	border: 2px red solid;
 }
